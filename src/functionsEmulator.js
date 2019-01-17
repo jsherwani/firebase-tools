@@ -205,6 +205,10 @@ FunctionsEmulator.prototype.start = function(shellMode) {
                 message += ": " + clc.bold(res.httpsTrigger.url);
               }
               utils.logSuccess(message);
+              controller.debug('inspect', funcName, {
+                pause: false,
+                port: 9229,
+              });
             } else {
               var provider = utils.getFunctionsEventProvider(res.eventTrigger.eventType);
               emulatedProviders[provider] = true;
